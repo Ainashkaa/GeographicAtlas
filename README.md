@@ -18,5 +18,5 @@ SwiftUI Only: The entire app is developed using SwiftUI, Apple's declarative fra
 Image Caching: The app implements an image caching mechanism to avoid downloading images multiple times. Once an image is downloaded, it is stored in the cache and reused when needed.
 Architecture: The app follows the MVVM (Model-View-ViewModel) architecture pattern. It separates the concerns of data, UI, and business logic to enhance maintainability and testability.
 ## Demo
-[![Gameplay Video](https://drive.google.com/uc?export=download&id=1UTC_KH5fWBoRKTNpKCbGBGTrOVYHbzWi)](https://drive.google.com/file/d/1UTC_KH5fWBoRKTNpKCbGBGTrOVYHbzWi/view?usp=sharing)
+The app's demo video is [here](https://drive.google.com/file/d/1UTC_KH5fWBoRKTNpKCbGBGTrOVYHbzWi/view)
 
