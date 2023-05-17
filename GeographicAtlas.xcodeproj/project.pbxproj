@@ -7,30 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		455A75E42A0FC799009F85F5 /* CountriesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A75E32A0FC799009F85F5 /* CountriesListView.swift */; };
+		452A05F62A14C26500441C84 /* FetchableImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A05F52A14C26500441C84 /* FetchableImage.swift */; };
+		452A05F82A14C31E00441C84 /* CountryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A05F72A14C31E00441C84 /* CountryListViewModel.swift */; };
+		452A05FA2A14C42200441C84 /* CountriesGatewayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452A05F92A14C42200441C84 /* CountriesGatewayHelper.swift */; };
+		455A75E42A0FC799009F85F5 /* CountryRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 455A75E32A0FC799009F85F5 /* CountryRowView.swift */; };
 		456D97622A0E327900BE3057 /* GeographicAtlasApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D97612A0E327900BE3057 /* GeographicAtlasApp.swift */; };
-		456D97642A0E327900BE3057 /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D97632A0E327900BE3057 /* CountryView.swift */; };
+		456D97642A0E327900BE3057 /* CountryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D97632A0E327900BE3057 /* CountryListView.swift */; };
 		456D97662A0E327B00BE3057 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 456D97652A0E327B00BE3057 /* Assets.xcassets */; };
 		456D97692A0E327B00BE3057 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 456D97682A0E327B00BE3057 /* Preview Assets.xcassets */; };
 		456D97702A0FA84100BE3057 /* CountryModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D976F2A0FA84100BE3057 /* CountryModel.swift */; };
-		456D97722A0FB3E600BE3057 /* CountryDetailsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D97712A0FB3E600BE3057 /* CountryDetailsModel.swift */; };
-		456D97752A0FB7C400BE3057 /* CountriesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D97742A0FB7C400BE3057 /* CountriesViewModel.swift */; };
+		456D97752A0FB7C400BE3057 /* CountryDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 456D97742A0FB7C400BE3057 /* CountryDetailViewModel.swift */; };
 		45CA0FAB2A129C9300F2B549 /* CountryDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45CA0FAA2A129C9200F2B549 /* CountryDetailsView.swift */; };
-		45E30D3E2A10F11B0029CC20 /* CountryShortInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E30D3D2A10F11B0029CC20 /* CountryShortInfo.swift */; };
+		45E30D3E2A10F11B0029CC20 /* CountryDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E30D3D2A10F11B0029CC20 /* CountryDetailModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		455A75E32A0FC799009F85F5 /* CountriesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesListView.swift; sourceTree = "<group>"; };
+		452A05F52A14C26500441C84 /* FetchableImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FetchableImage.swift; sourceTree = "<group>"; };
+		452A05F72A14C31E00441C84 /* CountryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewModel.swift; sourceTree = "<group>"; };
+		452A05F92A14C42200441C84 /* CountriesGatewayHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesGatewayHelper.swift; sourceTree = "<group>"; };
+		455A75E32A0FC799009F85F5 /* CountryRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryRowView.swift; sourceTree = "<group>"; };
 		456D975E2A0E327900BE3057 /* GeographicAtlas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeographicAtlas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		456D97612A0E327900BE3057 /* GeographicAtlasApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeographicAtlasApp.swift; sourceTree = "<group>"; };
-		456D97632A0E327900BE3057 /* CountryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryView.swift; sourceTree = "<group>"; };
+		456D97632A0E327900BE3057 /* CountryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListView.swift; sourceTree = "<group>"; };
 		456D97652A0E327B00BE3057 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		456D97682A0E327B00BE3057 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		456D976F2A0FA84100BE3057 /* CountryModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryModel.swift; sourceTree = "<group>"; };
-		456D97712A0FB3E600BE3057 /* CountryDetailsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsModel.swift; sourceTree = "<group>"; };
-		456D97742A0FB7C400BE3057 /* CountriesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesViewModel.swift; sourceTree = "<group>"; };
+		456D97742A0FB7C400BE3057 /* CountryDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailViewModel.swift; sourceTree = "<group>"; };
 		45CA0FAA2A129C9200F2B549 /* CountryDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailsView.swift; sourceTree = "<group>"; };
-		45E30D3D2A10F11B0029CC20 /* CountryShortInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryShortInfo.swift; sourceTree = "<group>"; };
+		45E30D3D2A10F11B0029CC20 /* CountryDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryDetailModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,8 +67,11 @@
 		456D97602A0E327900BE3057 /* GeographicAtlas */ = {
 			isa = PBXGroup;
 			children = (
+				452A05F92A14C42200441C84 /* CountriesGatewayHelper.swift */,
+				452A05F52A14C26500441C84 /* FetchableImage.swift */,
 				456D97732A0FB4DC00BE3057 /* Model */,
-				456D97742A0FB7C400BE3057 /* CountriesViewModel.swift */,
+				456D97742A0FB7C400BE3057 /* CountryDetailViewModel.swift */,
+				452A05F72A14C31E00441C84 /* CountryListViewModel.swift */,
 				45CA0FAC2A129CA000F2B549 /* View */,
 				456D97612A0E327900BE3057 /* GeographicAtlasApp.swift */,
 				456D97652A0E327B00BE3057 /* Assets.xcassets */,
@@ -85,8 +92,7 @@
 			isa = PBXGroup;
 			children = (
 				456D976F2A0FA84100BE3057 /* CountryModel.swift */,
-				45E30D3D2A10F11B0029CC20 /* CountryShortInfo.swift */,
-				456D97712A0FB3E600BE3057 /* CountryDetailsModel.swift */,
+				45E30D3D2A10F11B0029CC20 /* CountryDetailModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -94,8 +100,8 @@
 		45CA0FAC2A129CA000F2B549 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				456D97632A0E327900BE3057 /* CountryView.swift */,
-				455A75E32A0FC799009F85F5 /* CountriesListView.swift */,
+				456D97632A0E327900BE3057 /* CountryListView.swift */,
+				455A75E32A0FC799009F85F5 /* CountryRowView.swift */,
 				45CA0FAA2A129C9200F2B549 /* CountryDetailsView.swift */,
 			);
 			path = View;
@@ -171,14 +177,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				452A05F62A14C26500441C84 /* FetchableImage.swift in Sources */,
 				45CA0FAB2A129C9300F2B549 /* CountryDetailsView.swift in Sources */,
-				456D97642A0E327900BE3057 /* CountryView.swift in Sources */,
-				455A75E42A0FC799009F85F5 /* CountriesListView.swift in Sources */,
+				456D97642A0E327900BE3057 /* CountryListView.swift in Sources */,
+				452A05FA2A14C42200441C84 /* CountriesGatewayHelper.swift in Sources */,
+				452A05F82A14C31E00441C84 /* CountryListViewModel.swift in Sources */,
+				455A75E42A0FC799009F85F5 /* CountryRowView.swift in Sources */,
 				456D97622A0E327900BE3057 /* GeographicAtlasApp.swift in Sources */,
 				456D97702A0FA84100BE3057 /* CountryModel.swift in Sources */,
-				45E30D3E2A10F11B0029CC20 /* CountryShortInfo.swift in Sources */,
-				456D97752A0FB7C400BE3057 /* CountriesViewModel.swift in Sources */,
-				456D97722A0FB3E600BE3057 /* CountryDetailsModel.swift in Sources */,
+				45E30D3E2A10F11B0029CC20 /* CountryDetailModel.swift in Sources */,
+				456D97752A0FB7C400BE3057 /* CountryDetailViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

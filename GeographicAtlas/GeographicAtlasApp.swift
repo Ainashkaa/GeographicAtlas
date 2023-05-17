@@ -11,7 +11,7 @@ import SwiftUI
 struct GeographicAtlasApp: App {
     var body: some Scene {
         WindowGroup {
-            CountryView()
+            CountryListView()
         }
     }
 }

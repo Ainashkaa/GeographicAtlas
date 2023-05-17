@@ -1,5 +1,5 @@
 //
-//  CountriesListView.swift
+//  CountryRowView.swift
 //  GeographicAtlas
 //
 //  Created by Ainash Turbayeva on 13.05.2023.
@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-struct CountriesListView: View {
+struct CountryRowView: View {
     let country: CountryModel
-    @StateObject var viewModel = CountriesViewModel()
+    @StateObject var viewModel = CountryDetailViewModel()
     @State private var isExpanded = false
     
     var body: some View {
@@ -20,7 +20,9 @@ struct CountriesListView: View {
                     HStack {
                         CountryMainInfo(country: country)
                         Button(action: {
-                            isExpanded.toggle()
+                            withAnimation {
+                                isExpanded.toggle()
+                            }
                         }) {
                             Image(systemName: isExpanded ? "chevron.down" : "chevron.right")
                                 .font(.system(size: 14))
@@ -36,21 +38,25 @@ struct CountriesListView: View {
                             .padding(.top, 4)
                         Spacer()
                         
-                        VStack(alignment: .center) {
+                        HStack() {
                             NavigationLink(destination: CountryDetailsView(country: country)) {
-                                Button("Learn more") {
-                                    viewModel.fetchCountryDetailInfo(countryCode: country.countryCode2)
-                                }
+                                Text("Learn more")
+                                    .font(.custom("SFProText-Semibold", size: 17))
+                                    .foregroundColor(.blue)
+                                    .padding(.horizontal)
+                                
                             }
-                            .font(.custom("SFProText-Semibold", size: 17))
-                            .foregroundColor(.blue)
+                            Spacer()
                         }
-                        .frame(maxWidth: .infinity, alignment: .center)
+                        .frame(maxWidth: .infinity)
+                        
+                        
                     }
                     
                     Spacer()
                 }
                 .padding(.all, 12)
+                
             }
             .font(.custom("SFProText-Semibold", size: 17))
             .background(Color(red: 0.969, green: 0.973, blue: 0.976))
@@ -64,13 +70,14 @@ struct CountryMainInfo: View {
     
     var body: some View {
         HStack(){
-            Image("Flag")
+            getImage(for: country)
                 .resizable()
                 .frame(maxWidth: 82, maxHeight: 48)
                 .cornerRadius(8)
             VStack(alignment: .listRowSeparatorLeading, spacing: 4) {
                 Text(country.name.common)
                     .font(.custom("SFProText-Semibold", size: 17))
+                    .foregroundColor(Color(red: 0, green: 0, blue: 0))
                 Text(country.capital)
                     .font(.custom("SFProText-Regular", size: 13))
                     .foregroundColor(Color(red: 0.533, green: 0.533, blue: 0.533))
@@ -80,6 +87,14 @@ struct CountryMainInfo: View {
             .padding(.top, 4)
         }
         .frame(maxWidth: .infinity, maxHeight: 72)
+    }
+    
+    func getImage(for country: CountryModel) -> Image {
+        if let countryFlag = country.flagImage {
+            return Image(countryFlag, scale: 1.0, label: Text(""))
+        } else {
+            return Image("Flag")
+        }
     }
 }
 
@@ -112,6 +127,7 @@ struct CountryRestInfo: View {
     }
 }
 
+
 struct CountriesListView_Previews: PreviewProvider {
     static var previews: some View {
         
@@ -122,7 +138,7 @@ struct CountriesListView_Previews: PreviewProvider {
         let flags = CountryModel.Flags(png: "")
         let capitalsCoordinates = CountryModel.LatitudeLongtitude(latlng: [51.16, 71.45])
         
-        CountriesListView(country: .init(
+        CountryRowView(country: .init(
             name: name,
             population: 19,
             area: 2.725,

@@ -9,49 +9,53 @@ import SwiftUI
 
 struct CountryDetailsView: View {
     
+    @StateObject var vm = CountryDetailViewModel()
     let country: CountryModel
     
- 
     var body: some View {
         NavigationStack {
             VStack(alignment: .leading, spacing: 4) {
-                Group {
-                    Image("Flag")
-                        .resizable()
-                        .frame(maxWidth: .infinity, maxHeight: 193)
-                        .cornerRadius(8)
-                    Description("Region")
-                    CountryValues(country.name.common)
-                    Description("Capital")
-                    CountryValues(country.capital)
-                    Description("Capital coordinates")
-                    if let coordinates = country.capitalCoordinates,
-                       let latitude = coordinates.latlng?.first,
-                       let longtitude = coordinates.latlng?.last {
-                        CountryValues("\(latitude)', \(longtitude)'")
+                if vm.countryDetail != nil {
+                    Group {
+                        getImage(for: vm.countryDetail!)
+                            .resizable()
+                            .frame(maxWidth: .infinity, maxHeight: 193)
+                            .cornerRadius(8)
+                        Description("Region")
+                        CountryValues(vm.countryDetail!.name.common)
+                        Description("Capital")
+                        CountryValues(vm.countryDetail!.capital)
+                        Description("Capital coordinates")
+                        if let coordinates = vm.countryDetail!.capitalCoordinates,
+                           let latitude = coordinates.latlng?.first,
+                           let longtitude = coordinates.latlng?.last {
+                            CountryValues("\(latitude)', \(longtitude)'")
+                        }
                     }
-                }
-                Group {
-                    Description("Population")
-                    CountryValues("\(country.population) mln")
-                    Description("Area")
-                    CountryValues("\(String(country.area)) km")
-                    Description("Currency")
-                    if let currency = country.currencies,
-                       let name = currency.list.first?.name,
-                       let symbol = currency.list.first?.symbol {
-                        CountryValues("\(name), \(symbol)")
-                    }
-                    Description("Timezones")
-                    if let timezones = country.timezones.last {
-                        CountryValues("\(timezones)")
-                        
+                    Group {
+                        Description("Population")
+                        CountryValues("\(vm.countryDetail!.population) mln")
+                        Description("Area")
+                        CountryValues("\(String(vm.countryDetail!.area)) km")
+                        Description("Currency")
+                        if let currency = vm.countryDetail!.currencies,
+                           let name = currency.list.first?.name,
+                           let symbol = currency.list.first?.symbol {
+                            CountryValues("\(name), \(symbol)")
+                        }
+                        Description("Timezones")
+                        if let timezones = vm.countryDetail!.timezones.last {
+                            CountryValues("\(timezones)")
+                        }
                     }
                 }
             }
             .padding(.top, 20)
             .padding(.leading, 16)
             .padding(.trailing, 16)
+            .onAppear{
+                vm.fetchCountryDetailInfo(countryCode: country.countryCode2)
+            }
             Spacer()
                 .navigationTitle(country.name.common)
                 .toolbar {
@@ -66,6 +70,14 @@ struct CountryDetailsView: View {
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
+        }
+    }
+    
+    func getImage(for countryDetail: CountryDetailModel) -> Image {
+        if let countryFlag = countryDetail.flagImage {
+            return Image(countryFlag, scale: 1.0, label: Text(""))
+        } else {
+            return Image("Flag")
         }
     }
 }
@@ -90,6 +102,7 @@ struct Description: View {
         .padding(.top, 20)
     }
 }
+
 
 struct CountryValues: View {
     var text: String?
@@ -131,8 +144,5 @@ struct CountryDetailsView_Previews: PreviewProvider {
             capitalCoordinates: capitalsCoordinates,
             currencies: currencies)
         )
-        
-        
-        
     }
 }

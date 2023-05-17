@@ -1,15 +1,16 @@
 //
-//  CountryModel.swift
+//  CountryDetailModel.swift
 //  GeographicAtlas
 //
-//  Created by Ainash Turbayeva on 13.05.2023.
+//  Created by Ainash Turbayeva on 14.05.2023.
 //
 
 import Foundation
 import SwiftUI
 
-struct CountryModel: Decodable {
+struct CountryDetailModel: Decodable {
     let name: Name
+    
     let population: Int
     let area: Double
     let capitals: [String]
@@ -22,10 +23,8 @@ struct CountryModel: Decodable {
     let flags: Flags
     let continents: [String]
     let capitalCoordinates: LatitudeLongtitude?
-    
     var currencyText: String
     var flagImage: CGImage?
-    
     
     struct Name: Codable {
         let common: String
@@ -40,7 +39,6 @@ struct CountryModel: Decodable {
 
         private struct DynamicCodingKeys: CodingKey {
 
-            // Use for string-keyed dictionary
             var stringValue: String
             init?(stringValue: String) {
                 self.stringValue = stringValue
@@ -76,9 +74,9 @@ struct CountryModel: Decodable {
         let symbol: String?
         
         init(from decoder: Decoder) throws {
-            let container: KeyedDecodingContainer<CountryModel.Currency.CodingKeys> = try decoder.container(keyedBy: CountryModel.Currency.CodingKeys.self)
-            self.name = try container.decodeIfPresent(String.self, forKey: CountryModel.Currency.CodingKeys.name)
-            self.symbol = try container.decodeIfPresent(String.self, forKey: CountryModel.Currency.CodingKeys.symbol)
+            let container: KeyedDecodingContainer<CountryDetailModel.Currency.CodingKeys> = try decoder.container(keyedBy: CountryDetailModel.Currency.CodingKeys.self)
+            self.name = try container.decodeIfPresent(String.self, forKey: CountryDetailModel.Currency.CodingKeys.name)
+            self.symbol = try container.decodeIfPresent(String.self, forKey: CountryDetailModel.Currency.CodingKeys.symbol)
         }
         
         init(name: String, symbol: String) {
@@ -93,8 +91,8 @@ struct CountryModel: Decodable {
         var latlng: [Double]?
         
         init(from decoder: Decoder) throws {
-            let container: KeyedDecodingContainer<CountryModel.LatitudeLongtitude.CodingKeys> = try decoder.container(keyedBy: CountryModel.LatitudeLongtitude.CodingKeys.self)
-            self.latlng = try container.decodeIfPresent([Double].self, forKey: CountryModel.LatitudeLongtitude.CodingKeys.latlng)
+            let container: KeyedDecodingContainer<CountryDetailModel.LatitudeLongtitude.CodingKeys> = try decoder.container(keyedBy: CountryDetailModel.LatitudeLongtitude.CodingKeys.self)
+            self.latlng = try container.decodeIfPresent([Double].self, forKey: CountryDetailModel.LatitudeLongtitude.CodingKeys.latlng)
         }
         
         init(latlng: [Double]) {
@@ -144,9 +142,8 @@ struct CountryModel: Decodable {
         if capitals.count > 0 {
             capital = capitals[0]
         }
+        
         flagImage = nil
-//        currencyName = currencies.name
-//        currencySymbol = currencies.symbol
     }
     
     init(name: Name, population: Int, area: Double, capitals: [String], countryCode2: String, countryCode3: String, region: String, timezones: [String], flags: Flags, continents: [String], capitalCoordinates: LatitudeLongtitude?, currencies: CurrencyList) {
@@ -175,17 +172,6 @@ struct CountryModel: Decodable {
         }
         
         self.currencyText = c.joined(separator: ", ")
-        flagImage = nil
+        self.flagImage = nil
     }
-    
- 
 }
-
-
-
-
-
-
-
-
-
