@@ -18,5 +18,6 @@ SwiftUI Only: The entire app is developed using SwiftUI, Apple's declarative fra
 Image Caching: The app implements an image caching mechanism to avoid downloading images multiple times. Once an image is downloaded, it is stored in the cache and reused when needed.
 Architecture: The app follows the MVVM (Model-View-ViewModel) architecture pattern. It separates the concerns of data, UI, and business logic to enhance maintainability and testability.
 ## Demo
-The app's demo video is [here](https://drive.google.com/file/d/1UTC_KH5fWBoRKTNpKCbGBGTrOVYHbzWi/view)
+
+https://github.com/Ainashkaa/GeographicAtlas/assets/37531620/0df7546a-ab5a-4978-9c67-865612eef8a2
 
